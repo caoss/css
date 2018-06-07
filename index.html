@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="http://apps.bdimg.com/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
+    <script src="base64.min.js"></script>
+    <script>
+            var hash = CryptoJS.HmacSHA256("Message", "secret");
+            // var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+            //aa747c502a898200f9e4fa21bac68136f886a0e27aec70ba06daf2e2a5cb5597
+            document.write(hash);
+
+            $(function(){
+
+                for(var i =0;i <$('li').length;i++){
+                    $("li").eq(i).click(
+                        (function(){
+                            alert(i)
+                        })(i);
+                    );
+                }
+                
+            });
+    </script>
 </head>
 <body>
-    test
+   
 </body>
 </html>
