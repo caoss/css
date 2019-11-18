@@ -1,0 +1,51 @@
+
+
+22222
+onConfirm={self._delStep.bind(self,step_li.id,{id:item.id,index,type:2})}
+
+
+3333
+onConfirm={self._delStep.bind(self,li3.id,{id:step_li.id,index,type:3,i3:step_i})}
+
+
+4444
+onConfirm={self._delStep.bind(self,li4.id,{ id:li3.id,index,type:4,i3:step_i,i:i3 })}
+
+
+
+5555
+onConfirm={self._delStep.bind(self,li5.id,{ id:li4.id,index,type:5,i3:step_i,i:i3,i })}
+
+
+
+
+onClick={self._changeEnable.bind(self,{type:0,id:li3.id,i1:index,i2:step_i,i3})} 
+
+onClick={self._changeEnable.bind(self,{type:0,id:li4.id,i1:index,i2:step_i,i3,i4})}
+
+onClick={self._changeEnable.bind(self,{type:0,id:li5.id,i1:index,i2:step_i,i3,i4,i5})} type='primary' >
+
+
+
+
+
+
+
+
+
+333333
+
+<Button className='icon_edit' onClick={ self._edit.bind(self, toJS(li3),{id:step_li.id,index,type:3,i3:step_i,index1:index,index2:step_i,index3:i3}) }  icon="form" /> 
+{/* 传父级的ID，i3也传上一级的 */}
+<Button className='icon_edit' onClick={ self._addCriteria.bind(self, toJS(li3),{id:step_li.id,index,type:3,i3:step_i}) }  icon="plus" >
+条件
+</Button> 
+
+
+444444
+<Button className='icon_edit' onClick={ self._edit.bind(self, toJS(li4),{ id:li3.id,index,type:4,i3:step_i,i:i3,index1:index,index2:step_i,index3:i3,index4:i4 }) }  icon="form" /> 
+<Button className='icon_edit' onClick={ self._addCriteria.bind(self, toJS(li4),{ id:li3.id,index,type:4,i3:step_i,i:i3 }) }  icon="plus" >
+    条件
+</Button> 
+
+

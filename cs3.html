@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI 排序（Sortable） - 门户组件（Portlets）</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.css">
+</head>
+
+<body id="showTable">
+    <center>
+        <canvas id="cavsElem" width="800" height="560" style="border: 1px solid black; ">你的浏览器不支持此涂鸦板</canvas>
+        画笔颜色：<input type="color" id="context.color" />
+        画笔大小:<input type="number"id="context.size" max="10" value="1" />
+    </center>
+    <script>
+        (function(){
+            var canvas=document.getElementById('cavsElem');//获得画布
+            var context=canvas.getContext('2d');//准备画笔
+            var a=document.getElementById('context.color');
+            var b=document.getElementById('context.size');
+        canvas.onmousedown=function(e){     //鼠标触发onmousedown事件时,获取起始坐标
+            var x=e.clientX-canvas.getBoundingClientRect().left;
+            var y=e.clientY-canvas.getBoundingClientRect().top;
+            context.beginPath();
+            context.moveTo(x,y);       
+        canvas.onmousemove=function(event){   //触发鼠标移动事件时，获取绘制线条的坐标
+            var x=event.clientX-canvas.getBoundingClientRect().left;
+            var y=event.clientY-canvas.getBoundingClientRect().top;
+            context.lineTo(x,y);//绘制线条
+            context.strokeStyle=a.value;
+            context.lineWidth=b.value;
+            context.stroke();
+        };
+        canvas.onmouseup=function(event){    //鼠标被松开时，返回null
+            canvas.onmousemove=null;
+        };
+      };
+     }());
+    </script>
+</body>
+
+</html>

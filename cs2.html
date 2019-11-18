@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI 排序（Sortable） - 门户组件（Portlets）</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.css">
+
+    <style>
+    </style>
+   
+<svg width="800" height="400" id="J_SvgWrap"></svg>
+<script>
+var svg = document.getElementById('J_SvgWrap');
+var ell = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+ell.setAttribute("cx", 400);
+ell.setAttribute("cy", 200);
+ell.setAttribute("rx", 200)
+ell.setAttribute("ry", 100)
+svg.appendChild(ell);
+
+
+
+</script>
+</head>
+
+<body id="showTable">
+    <canvas width="800" height="400" id="J_MyCanvas"></canvas>
+    <script>
+    var cvs = document.getElementById('J_MyCanvas');
+    var ctx = cvs.getContext('2d');
+     
+    ctx.scale(1, 0.5);
+    ctx.arc(400, 200, 200, 0, Math.PI * 2);
+    ctx.fill();
+    </script>
+</body>
+
+</html>
